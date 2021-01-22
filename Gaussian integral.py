@@ -1,4 +1,3 @@
-
 import math
 def fun(x):
     return x*x
