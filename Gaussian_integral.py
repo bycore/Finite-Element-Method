@@ -18,5 +18,5 @@ def Gau_3(fun,a=-1.0,b=1.0):
 
 
 if __name__ == '__main__':
-    print(Gau_3(funtest1*funtest2))
+    Gau_3()
     
