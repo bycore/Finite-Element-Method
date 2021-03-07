@@ -12,7 +12,7 @@ def fun_g(x):
     # return -2.0+0*x
     return -1*sympy.exp(x)*(sympy.cos(x)-2*sympy.sin(x)-x*sympy.cos(x)-x*sympy.sin(x))
 
-N=32
+N=16
 a,b=0.0,1.0
 h=(b-a)/N
 
