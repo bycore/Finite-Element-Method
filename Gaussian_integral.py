@@ -4,8 +4,8 @@ import sympy
 
 def funtest1(x):
     return x
-def funtest2(x,y):
-    return x*x+y
+def funtest2(x,y,z):
+    return x*x+y+z
 
 
 def Gau_3(fun,a=-1.0,b=1.0):
@@ -36,8 +36,22 @@ def Gau_2D_9(fun):
         GauSum+=fun(x[i],y[i])*A[i]
     return GauSum
 
+def Gau_3D_14(fun):
+    B6=320.0/361
+    C8=121.0/361
+    b=math.sqrt(19.0/30)
+    c=math.sqrt(19.0/33)
+    A=[B6,B6,B6,B6,B6,B6,C8,C8,C8,C8,C8,C8,C8,C8]
+    x=[-b,b,0,0,0,0,-c,c,c,-c,-c,c,-c,c]
+    y=[0,0,-b,b,0,0,-c,c,-c,c,-c,c,c,-c]
+    z=[0,0,0,0,-b,b,-c,c,-c,-c,c,-c,c,c]
+    GauSum=0.0
+    for i in range(14):
+        GauSum+=fun(x[i],y[i],z[i])*A[i]
+    return GauSum
+
 x=sympy.symbols("x")
 
 if __name__== '__main__':
-    init=Gau_2D_9(funtest2)
+    init=Gau_3D_14(funtest2)
     print(init)
